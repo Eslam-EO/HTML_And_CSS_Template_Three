@@ -13,4 +13,12 @@ let countDown = setInterval(function () {
   document.querySelector('.counter .hours').innerHTML = hours;
   document.querySelector('.counter .minutes').innerHTML = minutes;
   document.querySelector('.counter .seconds').innerHTML = seconds;
+
+  if (dateDiff < 0) {
+    clearInterval(countDown);
+    document.querySelector('.counter .days').innerHTML = '00';
+    document.querySelector('.counter .hours').innerHTML = '00';
+    document.querySelector('.counter .minutes').innerHTML = '00';
+    document.querySelector('.counter .seconds').innerHTML = '00';
+  }
 }, 1000);
